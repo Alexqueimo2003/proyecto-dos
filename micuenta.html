@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Cuenta </title>
+  
+  
+  <script>
+    if (localStorage.getItem('sesionActiva') !== 'true') {
+      window.location.href = 'login.html';
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-amber-100 text-gray-800 p-8 flex flex-col items-center gap-6">
+  
+
+  <div class="w-full max-w-xl flex justify-between items-center bg-white/80 backdrop-blur p-4 rounded-xl shadow-sm mb-2">
+    <p id="bienvenidaUsuario" class="text-gray-800 font-medium text-lg">
+      Cargando usuario...
+    </p>
+    <button id="btnCerrarSesion" class="w-fit bg-orange-500 hover:bg-orange-700 text-white font-medium py-1.5 px-4 rounded transition duration-200 cursor-pointer">
+      Cerrar Sesión
+    </button>
+  </div>
+
+  <!-- Enlace para regresar -->
+  <div class="w-full max-w-xl flex justify-start">
+    <a href="index.html" class="inline-block text-orange-600 hover:text-orange-400 font-bold text-md transition duration-200">
+      <- Regresar a la página principal
+    </a>
+  </div>
+
+  <!-- FORMULARIO DE EDICIÓN DE CUENTA -->
+  <div class="w-full max-w-xl bg-white p-6 rounded-2xl shadow-md flex flex-col gap-4">
+    <h1 class="text-2xl font-bold text-orange-600 border-b border-gray-200 pb-2">Configuración de la Cuenta</h1>
+    
+    <form id="formCuenta" class="flex flex-col gap-4">
+      <!-- Campo Nombre -->
+      <div class="flex flex-col gap-1">
+        <label for="inputNombre" class="font-semibold text-gray-700 text-sm">Nombre</label>
+        <input type="text" id="inputNombre" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500">
+      </div>
+
+      <!-- Campo Apellido -->
+      <div class="flex flex-col gap-1">
+        <label for="inputApellido" class="font-semibold text-gray-700 text-sm">Apellido</label>
+        <input type="text" id="inputApellido" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500">
+      </div>
+
+      <!-- Campo Correo -->
+      <div class="flex flex-col gap-1">
+        <label for="inputCorreo" class="font-semibold text-gray-700 text-sm">Correo Electrónico</label>
+        <input type="email" id="inputCorreo" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500">
+      </div>
+
+      <!-- Campo Contraseña -->
+      <div class="flex flex-col gap-1">
+        <label for="inputPassword" class="font-semibold text-gray-700 text-sm">Nueva Contraseña</label>
+        <input type="password" id="inputPassword" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-500">
+      </div>
+
+      <!-- Contenedor de Mensajes de Error / Éxito -->
+      <div id="mensajeFeedback" class="hidden text-sm font-bold text-center p-2 rounded-lg"></div>
+
+      <!-- Botón de Guardar -->
+      <button type="submit" class="w-full mt-2 py-2.5 px-4 bg-orange-500 hover:bg-orange-700 text-white font-bold rounded-xl transition duration-200 cursor-pointer text-center">
+        Guardar Cambios 
+      </button>
+    </form>
+  </div>
+
+  <script src=".\micuenta.js"></script>
+</body>
+</html>

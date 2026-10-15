@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del Personaje - Multiverso</title>
+  
+  <!-- 1. BLOQUE DE SEGURIDAD (Obligatorio) -->
+  <script>
+    if (localStorage.getItem('sesionActiva') !== 'true') {
+      window.location.href = 'login.html';
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-amber-100 text-gray-800 p-8 flex flex-col items-center gap-6">
+  
+  <!-- BARRA DE USUARIO (Restaurada para corregir el error de null) -->
+  <div class="w-full max-w-xl flex justify-between items-center bg-white/80 backdrop-blur p-4 rounded-xl shadow-sm mb-2">
+    <p id="bienvenidaUsuario" class="text-gray-800 font-medium text-lg">
+      Cargando usuario...
+    </p>
+    
+    <!-- Botón para Cerrar la sesión del usuario-->
+    <button id="btnCerrarSesion" class="w-fit bg-orange-500 hover:bg-orange-700 text-white font-medium py-1.5 px-4 rounded transition duration-200 cursor-pointer">
+      Cerrar Sesión
+    </button>
+  </div>
+
+  <!-- Botón permanente para regresar -->
+  <div class="w-full max-w-xl flex justify-center">
+     <a href="index.html" class="inline-block text-orange-400 hover:text-orange-700 font-bold text-md transition-colors duration-200">
+     ← Regresar a la página principal....
+  </a>
+  </div>
+
+  <!-- Contenedor donde JavaScript inyectará la ficha del personaje -->
+  <div class="w-full max-w-xl bg-white p-6 rounded-2xl shadow-md flex flex-col gap-4" id="detallePersonaje">
+    <div class="flex flex-col items-center justify-center p-8 gap-3">
+      <div class="animate-spin rounded-full h-10 w-12 border-4 border-orange-500 border-t-transparent"></div>
+      <p class="text-md font-medium text-gray-500">Abriendo portal dimensional...</p>
+    </div>
+  </div>
+
+   <script src=".\personaje.js"></script> 
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pagina Rick y Morty</title>
+  
+ <!-- script para que no se ejecute si el ususario no se ha validado-->
+  <script>
+    if (localStorage.getItem('sesionActiva') !== 'true') {
+      window.location.href = 'login.html';
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+
+<body class="bg-amber-100 text-orange-400 p-8 flex flex-col items-center gap-8">
+
+  <!-- para colocar el nombre del usuario de la sesion que tiene activa-->
+  <div class="w-full max-w-5xl flex justify-between items-center bg-white/80 backdrop-blur p-4 rounded-xl shadow-sm mb-4">
+    <p id="bienvenidaUsuario" class="text-gray-800 font-medium text-lg">
+      Cargando usuario...
+    </p>
+    
+    <!-- Botón para Cerrar la sesión del usuario-->
+    <button id="btnCerrarSesion" class="w-fit bg-orange-500 hover:bg-orange-700 text-white font-medium py-1.5 px-4 rounded transition duration-200 cursor-pointer">
+      Cerrar Sesión
+    </button>
+  </div>
+
+  <div>
+    <a href="micuenta.html" class="w-fit text-sm text-orange-600 hover:text-orange-400 font-bold underline transition duration-200">
+      Mi Cuenta ()
+    </a>
+  </div>
+
+  <h1 class="font-bold text-3xl">Personajes de Rick and Morty</h1>
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 " id="personajes"></div>
+
+  <script src=".\principal.js"></script> 
+
+</body>
+
+</html>

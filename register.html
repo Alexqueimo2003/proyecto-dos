@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Registro</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    }
+  </style>
+    
+</head>
+<body>
+
+
+<div class="min-h-screen bg-orange-100 flex flex-col items-center justify-center p-4">
+  <form action="/enviar-datos" method="POST" id="registroForm" class="bg-amber-100 p-6 rounded-xl shadow-md w-full max-w-md flex flex-col gap-4">
+
+    <h2 class="text-2xl font-bold text-center text-gray-800 mb-2">Registro</h2>
+
+    <div class="flex flex-col">
+      <label for="nombre" class="font-medium text-gray-700 mb-1">Nombre:</label>
+      <input type="text" id="nombre"  class="border border-orange-400 rounded p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 " name="nombre" required placeholder="Nombre">
+      <span id="errorNombre" class="text-sm text-red-600 mt-1 hidden"></span>
+    </div>
+
+    <div class="flex flex-col">
+      <label for="apellido"  class="font-medium text-gray-700 mb-1">Apellido:</label>
+      <input type="text" id="apellido" class="border border-orange-400 rounded p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 " name="apellido" required placeholder="Apellido">
+      <span id="errorApellido" class="text-sm text-red-600 mt-1 hidden"></span>
+    </div>
+
+    <div class="flex flex-col">
+      <label for="email"  class="font-medium text-gray-700 mb-1">Correo Electrónico:</label>
+      <input type="email" id="email" name="email" class="border border-orange-400 rounded p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 " required placeholder="correo@gmail.com">
+    </div>
+
+    <div class="flex flex-col">
+      <label for="password"  class="font-medium text-gray-700 mb-1">Contraseña:</label>
+      <p class="text-xs text-gray-500 mb-1">Mínimo 8 caracteres (1 mayúscula, 1 minúscula, 1 número y 1 símbolo).</p>
+      <input type="password" id="password" name="password" class="border border-orange-400 rounded p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 " required placeholder="Crea una contraseña">
+    </div>
+
+    <div class="flex flex-col">
+      <label for="confirm_password"  class="font-medium text-gray-700 mb-1">Confirmar Contraseña:</label>
+      <input type="password" id="confirm_password" name="confirm_password" class="border border-orange-400 rounded p-2 focus:outline-none focus:ring-2 focus:ring-orange-500 " required placeholder="Repite tu contraseña">
+      <span id="errorPassword" class="text-sm text-red-600 mt-1 hidden"></span>
+    </div>
+
+    <button type="submit"  class="bg-orange-400 hover:bg-orange-700 text-white font-medium py-2 rounded transition duration-200 mt-2">Registrarse</button>
+
+    <div class="mt-4 text-center">
+      <p class="text-sm text-gray-600">
+        ¿Ya tienes una cuenta? 
+        <a href="login.html" class="text-orange-600 hover:underline font-medium">Inicia sesión aquí</a>
+      </p>
+    </div>
+      
+  </form>
+</div>
+  <script src=".\validacion.js"></script> 
+
+</body>
+</html>
